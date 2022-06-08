@@ -17,15 +17,19 @@ SELECT
     user_id
   , item_id
   , adv_company
-  , ts as start_time
-  , LEAD(ts, 1 , 100000) OVER (PARTITION BY user_id, item_id, adv_company ORDER BY ts) as end_time 
+--  , LAG(ts, 1 , -1) OVER (PARTITION BY user_id, item_id ORDER BY ts) as prev_click_time 
+  , ts as click_time
+  , LEAD(ts, 1 , 100000) OVER (PARTITION BY user_id, item_id ORDER BY ts) as next_click_time 
 FROM
   click_event
-) 
+)
 SELECT
     a.user_id
   , a.item_id
   , a.adv_company
   , ts as purchase_time
 FROM normalized a
-JOIN puchase b ON (a.user_id = b.user_id AND a.item_id=b.item_id AND a.start_time <= b.ts AND a.end_time > b.ts)
+JOIN puchase b ON (a.user_id = b.user_id AND a.item_id=b.item_id) 
+WHERE 
+        a.click_time <= b.ts 
+  AND   a.next_click_time > b.ts
