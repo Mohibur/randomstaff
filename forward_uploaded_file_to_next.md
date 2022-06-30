@@ -16,8 +16,9 @@
 
 
 
+
+# Following code will forward the uploaded file smoothly. 
 ```java
-package simple.mind.cmsa;
 
 import java.io.IOException;
 
