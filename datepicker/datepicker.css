@@ -1,0 +1,86 @@
+.date_jump_field {
+	border: 1px solid gold;
+	padding: 4px;
+	text-align: center;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: x-small;
+	background: #afafaf;
+	cursor: pointer;
+}
+
+.datepicker_caption {
+	font-size: x-small;
+	background: #faaf30;
+}
+
+.datepicker_element {
+	text-align: center;
+	background: #ffe8e8;
+	/*
+	(CELL_WIDTH + DATE_CELL_PADDING * 2 + (BORDER=1)*2 + (DEFAULT_CEL_SPACING=2))* (COL_COUNT=7) + DEFAULT_CEL_SPACING
+	*/
+	width: 226px;
+	border: 1px solid #ff8989;
+	border-radius: 5px;
+	height: 25px;
+}
+
+.datepicker-parent {
+	position: absolute;
+	border: 1px solid gold;
+	background: #afafaf;
+}
+
+.datepicker-hide-parent {
+	display: none;
+}
+
+.datepicker-weekday-cell, .datepicker-datecell-out, .datepicker-datecell,
+	.datepicker-datecell-today, .datepicker-datecell-selected {
+	height: 20px;
+	width: 20px;
+	border: 1px solid gold;
+	padding: 4px;
+	border-radius: 5px;
+	font-size: x-small;
+}
+
+.datepicker-weekday-cell {
+	text-align: center;
+	cursor: default;
+	background: #78c0bc;
+	cursor: cursor;
+}
+
+.datepicker-datecell-today {
+	background: #a4d4d4;
+	text-align: center;
+}
+
+.datepicker-datecell-selected {
+	background: #446444;
+	text-align: center;
+}
+
+.datepicker-datecell {
+	background: #ffffff;
+	cursor: pointer;
+	text-align: center;
+}
+
+.datepicker-datecell-out {
+	vertical-align: bottom;
+	text-align: right;
+	background: #949494;
+	cursor: default;
+}
+
+.datepicker-month-cell {
+	border: 1px solid #ff8989;
+	border-radius: 5px;
+	background: #faaf30;
+	cursor: default;
+	font-size: x-small;
+	text-align: center;
+}
